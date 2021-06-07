@@ -93,6 +93,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 					</executions>
 					<configuration>
 						<schemaLanguage>WSDL</schemaLanguage>
+						<generateDirectory>target/generated-sources/xjc/workflow</generateDirectory>
 						<generatePackage>com.example.consumingwebservice.wsdl</generatePackage>
 						<schemas>
 							<schema>
