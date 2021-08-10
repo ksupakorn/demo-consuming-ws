@@ -20,14 +20,14 @@ public class ConsumingWebServiceApplication {
 		SpringApplication.run(ConsumingWebServiceApplication.class, args);
 	}
 
-    @Value("${my.property.name}")
-	private String myValues;
+//    @Value("${my.property.name}")
+//	private String myValues;
 	  
 	
 	@Bean
 	CommandLineRunner lookup(CountryClient quoteClient) {
 		
-		log.info("myValue " + myValues);
+//		log.info("myValue " + myValues);
 		
 		
 		return args -> {
@@ -36,7 +36,7 @@ public class ConsumingWebServiceApplication {
 			if (args.length > 0) {
 				country = args[0];
 			}
-			GetCountryResponse response = quoteClient.getCountry(country);
+			GetCountryResponse response = (GetCountryResponse) quoteClient.getCountry(country);
 			System.err.println(response.getCountry().getCurrency());
 		};
 	}
